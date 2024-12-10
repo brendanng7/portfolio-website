@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -54,13 +56,13 @@ export function Navbar() {
                   <a
                     key={social}
                     href={`https://${url}`}
-                    className="transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle relative py-1 px-2 m-1"
+                    className="transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle relative py-1 m-1"
                   >
                     <Image
                       src={svg}
                       alt={name}
-                      width={24}
-                      height={24}
+                      width={30}
+                      height={30}
                       className=""
                     />
                   </a>
