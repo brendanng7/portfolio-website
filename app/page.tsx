@@ -5,7 +5,7 @@ export default function Page() {
   return (
     <section>
       <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
-        Brendan Ng
+        Hi, I'm Brendan Ng
       </h1>
       <p className="mb-4">
         {`I'm a prospective hire studying computer science in NUS. Currently a second year student planning to graduate in 2027.

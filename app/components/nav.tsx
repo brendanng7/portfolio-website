@@ -49,26 +49,40 @@ export function Navbar() {
               );
             })}
           </div>
-          <div className="flex flex-row space-x-0 pr-10">
+          <div className="flex flex-row space-x-0 pr-10 items-center">
             {Object.entries(socials).map(([social, { name, url, svg }]) => {
               return (
                 <>
                   <a
                     key={social}
                     href={`https://${url}`}
-                    className="transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle relative py-1 m-1"
+                    target="_blank"
+                    className="transition-all flex relative py-1 m-1 group"
                   >
                     <Image
                       src={svg}
                       alt={name}
                       width={30}
                       height={30}
-                      className=""
+                      className="group-hover:-translate-y-1 transition-transform"
                     />
                   </a>
                 </>
               );
             })}
+            <a
+              href="/resume/resume.pdf"
+              download
+              className="transition-all flex relative py-1 m-1 group"
+            >
+              <Image
+                src="/resume/download-resume.svg"
+                alt="resume"
+                width={30}
+                height={30}
+                className="group-hover:-translate-y-1 transition-transform"
+              />
+            </a>
           </div>
         </nav>
       </div>
