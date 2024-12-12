@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+  <rss version="2.0">
+    <channel>
+        <title>My Portfolio</title>
+        <link>https://brendanng7.github.io/portfolio-website</link>
+        <description>This is my portfolio RSS feed</description>
+        <item>
+          <title>My thoughts on CS2100: Computer Organisation</title>
+          <link>https://brendanng7.github.io/portfolio-website/blog/cs2100</link>
+          <description>CS2100 is regarded as one of the tougher mods to take in computer science and I understand why</description>
+          <pubDate>Thu, 12 Dec 2024 00:00:00 GMT</pubDate>
+        </item>
+    </channel>
+  </rss>
