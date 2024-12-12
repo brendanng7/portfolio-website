@@ -1,7 +1,8 @@
-import { NextConfig } from 'next';
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  basePath: 'http://github.com/brendanng7/portfolio-website',
+  output: 'export',
+  basePath: '/portfolio-website',
 };
 
 export default nextConfig;
