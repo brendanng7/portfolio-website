@@ -18,8 +18,11 @@ jobs:
         with:
           node-version: '16' # Replace with your Node.js version
 
+      - name: Install pnpm
+        run: npm install -g pnpm
+
       - name: Install Dependencies
         run: pnpm install
 
       - name: Build and Deploy
-        run: npm run deploy
+        run: pnpm run deploy
