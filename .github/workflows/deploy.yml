@@ -43,6 +43,6 @@ jobs:
           git commit -m "Deploy"
 
       - name: Push to gh-pages
-        run: git subtree push --prefix out origin gh-pages
+        run: git subtree push --prefix out origin gh-pages --force
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
