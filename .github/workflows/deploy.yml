@@ -29,5 +29,16 @@ jobs:
       - name: Install Dependencies
         run: pnpm install
 
-      - name: Build and Deploy
-        run: pnpm run deploy
+      - name: Build the Project
+        run: pnpm run build
+
+      - name: Prepare Deployment
+        run: |
+          touch out/.nojekyll
+          git add out/
+          git commit -m "Deploy"
+
+      - name: Push to gh-pages
+        run: git subtree push --prefix out origin gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
