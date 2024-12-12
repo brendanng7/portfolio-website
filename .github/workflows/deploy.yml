@@ -38,6 +38,9 @@ jobs:
           git add out/
           git commit -m "Deploy"
 
+      - name: Fetch gh-pages
+        run: git fetch origin gh-pages
+
       - name: Push to gh-pages
         run: git subtree push --prefix out origin gh-pages
         env:
