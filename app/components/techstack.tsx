@@ -40,9 +40,11 @@ const others = {
 
 export default function TechStack() {
   return (
-    <div>
-      <h1 className="text-lg font-semibold tracking-tighter">Languages</h1>
-      <div className="flex flex-wrap gap-4">
+    <div className="">
+      <h1 className="text-2xl font-semibold tracking-tighter mb-1">
+        Languages
+      </h1>
+      <div className="flex flex-wrap gap-4 mb-2">
         {Object.entries(languages).map(([language, { name, svg }]) => (
           <Fragment key={language}>
             <Image
@@ -58,8 +60,10 @@ export default function TechStack() {
           </Fragment>
         ))}
       </div>
-      <h1 className="text-lg font-semibold tracking-tighter">Frameworks</h1>
-      <div className="flex flex-wrap gap-4">
+      <h1 className="text-2xl font-semibold tracking-tighter mb-1">
+        Frameworks
+      </h1>
+      <div className="flex flex-wrap gap-4 mb-2">
         {Object.entries(frameworks).map(([framework, { name, svg }]) => (
           <Fragment key={framework}>
             <Image
@@ -75,8 +79,8 @@ export default function TechStack() {
           </Fragment>
         ))}
       </div>
-      <h1 className="text-lg font-semibold tracking-tighter">Others</h1>
-      <div className="flex flex-wrap gap-4">
+      <h1 className="text-2xl font-semibold tracking-tighter mb-1">Others</h1>
+      <div className="flex flex-wrap gap-4 mb-2">
         {Object.entries(others).map(([other, { name, svg }]) => (
           <Fragment key={other}>
             <Image

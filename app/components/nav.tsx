@@ -42,7 +42,7 @@ export function Navbar() {
         !top && 'shadow-lg'
       }`}
     >
-      <div className="lg:w-2xl mx-auto flex justify-between items-center py-4">
+      <div className="lg:w-4xl md:w-3xl mx-auto flex justify-between items-center py-4">
         {/* Left Links */}
         <div className="flex space-x-4">
           {Object.entries(navItems).map(([path, { name }]) => (
