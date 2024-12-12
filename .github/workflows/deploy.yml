@@ -23,6 +23,9 @@ jobs:
           git config --global user.email "brendanngjj@gmail.com"
           git config --global user.name "brendanng7"
 
+      - name: Set Git Pull Configuration
+        run: git config pull.rebase true
+
       - name: Install pnpm
         run: npm install -g pnpm
 
