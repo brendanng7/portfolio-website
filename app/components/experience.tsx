@@ -10,12 +10,18 @@ function JouzuDescription() {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const techstack = {
-    react: { name: 'React', svg: '/techstack/react.svg' },
-    typescript: { name: 'TypeScript', svg: '/techstack/typescript.svg' },
-    expo: { name: 'Expo', svg: '/techstack/expo.svg' },
-    python: { name: 'Python', svg: '/techstack/python.svg' },
-    postgresql: { name: 'PostgreSQL', svg: '/techstack/postgresql.svg' },
-    django: { name: 'Django', svg: '/techstack/django.svg' },
+    react: { name: 'React', svg: '/portfolio-website/techstack/react.svg' },
+    typescript: {
+      name: 'TypeScript',
+      svg: '/portfolio-website/techstack/typescript.svg',
+    },
+    expo: { name: 'Expo', svg: '/portfolio-website/techstack/expo.svg' },
+    python: { name: 'Python', svg: '/portfolio-website/techstack/python.svg' },
+    postgresql: {
+      name: 'PostgreSQL',
+      svg: '/portfolio-website/techstack/postgresql.svg',
+    },
+    django: { name: 'Django', svg: '/portfolio-website/techstack/django.svg' },
   };
 
   return (
@@ -49,7 +55,7 @@ function JouzuDescription() {
       {/* Right Image Section */}
       <div className="flex justify-center">
         <Image
-          src={'/images/jouzu.png'}
+          src={'/portfolio-website/images/jouzu.png'}
           alt="Jouzu"
           width={500}
           height={500}
@@ -67,7 +73,7 @@ function JouzuDescription() {
               <div className="h-[48rem] overflow-y-auto">
                 <Image
                   id="transition-full-jouzu-poster"
-                  src={'/images/jouzu.png'}
+                  src={'/portfolio-website/images/jouzu.png'}
                   alt="Jouzu"
                   width={1000}
                   height={1000}
@@ -103,7 +109,7 @@ function ContactMateDescription() {
         </p>
         <div className="flex flex-wrap gap-4">
           <Image
-            src={'/techstack/java.svg'}
+            src={'/portfolio-website/techstack/java.svg'}
             alt="Java"
             width={40}
             height={40}
@@ -115,7 +121,7 @@ function ContactMateDescription() {
       {/* Right Image Section */}
       <div className="flex justify-center">
         <Image
-          src={'/images/contactmate.png'}
+          src={'/portfolio-website/images/contactmate.png'}
           alt="Jouzu"
           width={500}
           height={500}
@@ -133,7 +139,7 @@ function ContactMateDescription() {
               <div className="h-[1000] overflow-y-auto">
                 <Image
                   id="transition-full-jouzu-poster"
-                  src={'/images/contactmate.png'}
+                  src={'/portfolio-website/images/contactmate.png'}
                   alt="Jouzu"
                   width={1000}
                   height={1000}

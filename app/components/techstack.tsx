@@ -5,37 +5,46 @@ import { Fragment } from 'react';
 import { Tooltip } from 'react-tooltip';
 
 const languages = {
-  html5: { name: 'HTML5', svg: '/techstack/html-5.svg' },
-  css3: { name: 'CSS3', svg: '/techstack/css-3.svg' },
+  html5: { name: 'HTML5', svg: '/portfolio-website/techstack/html-5.svg' },
+  css3: { name: 'CSS3', svg: '/portfolio-website/techstack/css-3.svg' },
   javascript: {
     name: 'JavaScript',
-    svg: '/techstack/javascript.svg',
+    svg: '/portfolio-website/techstack/javascript.svg',
   },
   typescript: {
     name: 'TypeScript',
-    svg: '/techstack/typescript.svg',
+    svg: '/portfolio-website/techstack/typescript.svg',
   },
-  java: { name: 'Java', svg: '/techstack/java.svg' },
-  python: { name: 'Python', svg: '/techstack/python.svg' },
-  c: { name: 'C', svg: '/techstack/c.svg' },
-  ruby: { name: 'Ruby', svg: '/techstack/ruby.svg' },
+  java: { name: 'Java', svg: '/portfolio-website/techstack/java.svg' },
+  python: { name: 'Python', svg: '/portfolio-website/techstack/python.svg' },
+  c: { name: 'C', svg: '/portfolio-website/techstack/c.svg' },
+  ruby: { name: 'Ruby', svg: '/portfolio-website/techstack/ruby.svg' },
 };
 
 const frameworks = {
-  react: { name: 'React', svg: '/techstack/react.svg' },
-  nextjs: { name: 'Next.js', svg: '/techstack/nextjs.svg' },
-  expo: { name: 'Expo', svg: '/techstack/expo.svg' },
-  django: { name: 'Django', svg: '/techstack/django.svg' },
-  jest: { name: 'Jest', svg: '/techstack/jest.svg' },
-  postgresql: { name: 'PostgreSQL', svg: '/techstack/postgresql.svg' },
+  react: { name: 'React', svg: '/portfolio-website/techstack/react.svg' },
+  nextjs: { name: 'Next.js', svg: '/portfolio-website/techstack/nextjs.svg' },
+  expo: { name: 'Expo', svg: '/portfolio-website/techstack/expo.svg' },
+  django: { name: 'Django', svg: '/portfolio-website/techstack/django.svg' },
+  jest: { name: 'Jest', svg: '/portfolio-website/techstack/jest.svg' },
+  postgresql: {
+    name: 'PostgreSQL',
+    svg: '/portfolio-website/techstack/postgresql.svg',
+  },
 };
 
 const others = {
-  git: { name: 'Git', svg: '/techstack/git.svg' },
-  figma: { name: 'Figma', svg: '/techstack/figma.svg' },
-  tailwindcss: { name: 'Tailwind CSS', svg: '/techstack/tailwindcss.svg' },
-  postman: { name: 'Postman', svg: '/techstack/postman.svg' },
-  materialui: { name: 'Material UI', svg: '/techstack/material-ui.svg' },
+  git: { name: 'Git', svg: '/portfolio-website/techstack/git.svg' },
+  figma: { name: 'Figma', svg: '/portfolio-website/techstack/figma.svg' },
+  tailwindcss: {
+    name: 'Tailwind CSS',
+    svg: '/portfolio-website/techstack/tailwindcss.svg',
+  },
+  postman: { name: 'Postman', svg: '/portfolio-website/techstack/postman.svg' },
+  materialui: {
+    name: 'Material UI',
+    svg: '/portfolio-website/techstack/material-ui.svg',
+  },
 };
 
 export default function TechStack() {
