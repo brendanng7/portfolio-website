@@ -23,9 +23,6 @@ jobs:
           git config --global user.email "brendanngjj@gmail.com"
           git config --global user.name "brendanng7"
 
-      - name: Set Git Pull Configuration
-        run: git config pull.ff only
-
       - name: Install pnpm
         run: npm install -g pnpm
 
@@ -41,8 +38,8 @@ jobs:
           git add out/
           git commit -m "Deploy"
 
-      - name: Pull gh-pages
-        run: git pull origin gh-pages
+      - name: Pull gh-pages and Rebase
+        run: git pull --rebase origin gh-pages
 
       - name: Push to gh-pages
         run: git subtree push --prefix out origin gh-pages
