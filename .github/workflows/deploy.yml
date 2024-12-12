@@ -21,6 +21,11 @@ jobs:
       - name: Install pnpm
         run: npm install -g pnpm
 
+      - name: Set Git Config
+        run: |
+          git config --global user.email "brendanngjj@gmail.com"
+          git config --global user.name "brendanng7"
+
       - name: Install Dependencies
         run: pnpm install
 
