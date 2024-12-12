@@ -2,7 +2,7 @@ import ExperienceList from 'app/components/experience';
 import { BlogPosts } from 'app/components/posts';
 import TechStack from 'app/components/techstack';
 
-export default async function Page() {
+export default function Page() {
   return (
     <section className="px-4 py-8 md:px-8 lg:px-16">
       <h1 className="mb-8 text-3xl font-semibold tracking-tighter">
