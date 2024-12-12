@@ -24,7 +24,7 @@ jobs:
           git config --global user.name "brendanng7"
 
       - name: Set Git Pull Configuration
-        run: git config pull.rebase true
+        run: git config pull.ff only
 
       - name: Install pnpm
         run: npm install -g pnpm
