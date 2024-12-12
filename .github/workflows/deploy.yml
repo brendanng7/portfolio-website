@@ -18,23 +18,13 @@ jobs:
         with:
           node-version: '20.10.0'
 
-      - name: Install pnpm
-        run: npm install -g pnpm
-
       - name: Set Git Config
         run: |
           git config --global user.email "brendanngjj@gmail.com"
           git config --global user.name "brendanng7"
 
-      - name: Install Dependencies
-        run: pnpm install
-
       - name: Build the Project
-        run: pnpm run build
-
-      - name: Fetch Remote gh-pages Branch
-        run: |
-          git fetch origin gh-pages
+        run: next build
 
       - name: Prepare Deployment
         run: |
@@ -43,6 +33,6 @@ jobs:
           git commit -m "Deploy"
 
       - name: Push to gh-pages
-        run: git subtree push --prefix out origin gh-pages --force
+        run: git subtree push --prefix out origin gh-pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
