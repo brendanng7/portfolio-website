@@ -32,6 +32,10 @@ jobs:
       - name: Build the Project
         run: pnpm run build
 
+      - name: Fetch Remote gh-pages Branch
+        run: |
+          git fetch origin gh-pages
+
       - name: Prepare Deployment
         run: |
           touch out/.nojekyll
