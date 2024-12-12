@@ -23,8 +23,11 @@ jobs:
           git config --global user.email "brendanngjj@gmail.com"
           git config --global user.name "brendanng7"
 
+      - name: Install pnpm
+        run: npm install -g pnpm
+
       - name: Build the Project
-        run: next build
+        run: pnpm next build
 
       - name: Prepare Deployment
         run: |
