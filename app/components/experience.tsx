@@ -136,7 +136,7 @@ function ContactMateDescription() {
         >
           <Fade in={open}>
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-11/12 max-w-4xl bg-white border-2 border-black p-4">
-              <div className="h-[1000] overflow-y-auto">
+              <div className="max-h-full overflow-y-auto">
                 <Image
                   id="transition-full-jouzu-poster"
                   src={'/portfolio-website/images/contactmate.png'}
