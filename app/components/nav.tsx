@@ -38,7 +38,7 @@ export function Navbar() {
 
   return (
     <aside
-      className={`-ml-[8px] mb-16 tracking-tight z-50 lg:sticky lg:top-0 w-full bg-white transition-shadow duration-300 ${
+      className={`-ml-[8px] mb-16 tracking-tight z-50 lg:sticky lg:top-0 w-full bg-white dark:bg-black transition-shadow duration-300 ${
         !top && 'shadow-lg'
       }`}
     >
@@ -71,7 +71,7 @@ export function Navbar() {
                 alt={name}
                 width={30}
                 height={30}
-                className="group-hover:-translate-y-1 transition-transform"
+                className="group-hover:-translate-y-1 transition-transform dark:invert"
               />
             </a>
           ))}
@@ -85,7 +85,7 @@ export function Navbar() {
               alt="resume"
               width={30}
               height={30}
-              className="group-hover:-translate-y-1 transition-transform"
+              className="group-hover:-translate-y-1 transition-transform dark:invert"
             />
           </a>
         </div>

@@ -5,45 +5,102 @@ import { Fragment } from 'react';
 import { Tooltip } from 'react-tooltip';
 
 const languages = {
-  html5: { name: 'HTML5', svg: '/portfolio-website/techstack/html-5.svg' },
-  css3: { name: 'CSS3', svg: '/portfolio-website/techstack/css-3.svg' },
+  html5: {
+    name: 'HTML5',
+    svg: '/portfolio-website/techstack/html-5.svg',
+    classname: '',
+  },
+  css3: {
+    name: 'CSS3',
+    svg: '/portfolio-website/techstack/css-3.svg',
+    classname: '',
+  },
   javascript: {
     name: 'JavaScript',
     svg: '/portfolio-website/techstack/javascript.svg',
+    classname: '',
   },
   typescript: {
     name: 'TypeScript',
     svg: '/portfolio-website/techstack/typescript.svg',
+    classname: '',
   },
-  java: { name: 'Java', svg: '/portfolio-website/techstack/java.svg' },
-  python: { name: 'Python', svg: '/portfolio-website/techstack/python.svg' },
-  c: { name: 'C', svg: '/portfolio-website/techstack/c.svg' },
-  ruby: { name: 'Ruby', svg: '/portfolio-website/techstack/ruby.svg' },
+  java: {
+    name: 'Java',
+    svg: '/portfolio-website/techstack/java.svg',
+    classname: '',
+  },
+  python: {
+    name: 'Python',
+    svg: '/portfolio-website/techstack/python.svg',
+    classname: '',
+  },
+  c: { name: 'C', svg: '/portfolio-website/techstack/c.svg', classname: '' },
+  ruby: {
+    name: 'Ruby',
+    svg: '/portfolio-website/techstack/ruby.svg',
+    classname: '',
+  },
 };
 
 const frameworks = {
-  react: { name: 'React', svg: '/portfolio-website/techstack/react.svg' },
-  nextjs: { name: 'Next.js', svg: '/portfolio-website/techstack/nextjs.svg' },
-  expo: { name: 'Expo', svg: '/portfolio-website/techstack/expo.svg' },
-  django: { name: 'Django', svg: '/portfolio-website/techstack/django.svg' },
-  jest: { name: 'Jest', svg: '/portfolio-website/techstack/jest.svg' },
+  react: {
+    name: 'React',
+    svg: '/portfolio-website/techstack/react.svg',
+    classname: '',
+  },
+  nextjs: {
+    name: 'Next.js',
+    svg: '/portfolio-website/techstack/nextjs.svg',
+    classname: 'dark:invert',
+  },
+  expo: {
+    name: 'Expo',
+    svg: '/portfolio-website/techstack/expo.svg',
+    classname: 'dark:invert',
+  },
+  django: {
+    name: 'Django',
+    svg: '/portfolio-website/techstack/django.svg',
+    classname: 'dark:invert',
+  },
+  jest: {
+    name: 'Jest',
+    svg: '/portfolio-website/techstack/jest.svg',
+    classname: '',
+  },
   postgresql: {
     name: 'PostgreSQL',
     svg: '/portfolio-website/techstack/postgresql.svg',
+    classname: '',
   },
 };
 
 const others = {
-  git: { name: 'Git', svg: '/portfolio-website/techstack/git.svg' },
-  figma: { name: 'Figma', svg: '/portfolio-website/techstack/figma.svg' },
+  git: {
+    name: 'Git',
+    svg: '/portfolio-website/techstack/git.svg',
+    classname: '',
+  },
+  figma: {
+    name: 'Figma',
+    svg: '/portfolio-website/techstack/figma.svg',
+    classname: '',
+  },
   tailwindcss: {
     name: 'Tailwind CSS',
     svg: '/portfolio-website/techstack/tailwindcss.svg',
+    classname: '',
   },
-  postman: { name: 'Postman', svg: '/portfolio-website/techstack/postman.svg' },
+  postman: {
+    name: 'Postman',
+    svg: '/portfolio-website/techstack/postman.svg',
+    classname: '',
+  },
   materialui: {
     name: 'Material UI',
     svg: '/portfolio-website/techstack/material-ui.svg',
+    classname: '',
   },
 };
 
@@ -54,43 +111,49 @@ export default function TechStack() {
         Languages
       </h1>
       <div className="flex flex-wrap gap-4 mb-2">
-        {Object.entries(languages).map(([language, { name, svg }]) => (
-          <Fragment key={language}>
-            <Image
-              src={svg}
-              alt={name}
-              width={50}
-              height={50}
-              data-tooltip-id={language}
-              data-tooltip-content={name}
-              data-tooltip-place="bottom"
-            />
-            <Tooltip id={language}>{name}</Tooltip>
-          </Fragment>
-        ))}
+        {Object.entries(languages).map(
+          ([language, { name, svg, classname }]) => (
+            <Fragment key={language}>
+              <Image
+                src={svg}
+                alt={name}
+                width={50}
+                height={50}
+                data-tooltip-id={language}
+                data-tooltip-content={name}
+                data-tooltip-place="bottom"
+                className={classname}
+              />
+              <Tooltip id={language}>{name}</Tooltip>
+            </Fragment>
+          )
+        )}
       </div>
       <h1 className="text-2xl font-semibold tracking-tighter mb-1">
         Frameworks
       </h1>
       <div className="flex flex-wrap gap-4 mb-2">
-        {Object.entries(frameworks).map(([framework, { name, svg }]) => (
-          <Fragment key={framework}>
-            <Image
-              src={svg}
-              alt={name}
-              width={50}
-              height={50}
-              data-tooltip-id={framework}
-              data-tooltip-content={name}
-              data-tooltip-place="bottom"
-            />
-            <Tooltip id={framework}>{name}</Tooltip>
-          </Fragment>
-        ))}
+        {Object.entries(frameworks).map(
+          ([framework, { name, svg, classname }]) => (
+            <Fragment key={framework}>
+              <Image
+                src={svg}
+                alt={name}
+                width={50}
+                height={50}
+                data-tooltip-id={framework}
+                data-tooltip-content={name}
+                data-tooltip-place="bottom"
+                className={classname}
+              />
+              <Tooltip id={framework}>{name}</Tooltip>
+            </Fragment>
+          )
+        )}
       </div>
       <h1 className="text-2xl font-semibold tracking-tighter mb-1">Others</h1>
       <div className="flex flex-wrap gap-4 mb-2">
-        {Object.entries(others).map(([other, { name, svg }]) => (
+        {Object.entries(others).map(([other, { name, svg, classname }]) => (
           <Fragment key={other}>
             <Image
               src={svg}
@@ -100,6 +163,7 @@ export default function TechStack() {
               data-tooltip-id={other}
               data-tooltip-content={name}
               data-tooltip-place="bottom"
+              className={classname}
             />
             <Tooltip id={other}>{name}</Tooltip>
           </Fragment>
