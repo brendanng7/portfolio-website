@@ -28,7 +28,6 @@ export function Navbar() {
 
   useEffect(() => {
     const scrollHandler = () => {
-      // Update state with minimal logic for performance
       setTop(window.scrollY <= 30);
     };
 
@@ -77,7 +76,7 @@ export function Navbar() {
           ))}
           <a
             href="/portfolio-website/resume/resume.pdf"
-            download
+            target="_blank"
             className="transition-all group"
           >
             <Image
