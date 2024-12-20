@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { Fragment } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import { Tooltip } from 'react-tooltip';
 
 const languages = {
@@ -105,8 +105,21 @@ const others = {
 };
 
 export default function TechStack() {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setIsLoaded(true);
+    }, 100); // Allowing some delay for a smooth effect
+    return () => clearTimeout(timeout);
+  }, []);
+
   return (
-    <div className="">
+    <div
+      className={`transition-opacity duration-1000 ease-in ${
+        isLoaded ? 'opacity-100' : 'opacity-0'
+      }`}
+    >
       <h1 className="text-2xl font-semibold tracking-tighter mb-1">
         Languages
       </h1>

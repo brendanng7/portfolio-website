@@ -3,7 +3,7 @@
 import { Fade, Modal } from '@mui/material';
 import { ArrowIcon } from 'app/components/footer';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function JouzuDescription() {
   const [open, setOpen] = useState(false);
@@ -212,8 +212,21 @@ function ContactMateDescription() {
  * @returns JSX.Element
  */
 export default function ExperienceList() {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setIsLoaded(true);
+    }, 400); // Allowing some delay for a smooth effect
+    return () => clearTimeout(timeout);
+  }, []);
+
   return (
-    <div className="">
+    <div
+      className={`transition-opacity duration-1000 ease-in ${
+        isLoaded ? 'opacity-100' : 'opacity-0'
+      }`}
+    >
       <h1 className="text-2xl font-bold tracking-tight mb-8 text-gray-800 dark:text-gray-200">
         Experiences
       </h1>
