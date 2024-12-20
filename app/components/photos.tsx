@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { PhotoResource } from 'app/gallery/utils/types';
 import Link from 'next/link';
+import { Suspense } from 'react';
 
 export default function Photo(props: { photo_resource: PhotoResource }) {
   const { photo_resource } = props;
@@ -14,13 +15,25 @@ export default function Photo(props: { photo_resource: PhotoResource }) {
       href={photo_resource.secure_url}
       target="_blank"
     >
-      <Image
-        src={url}
-        alt={photo_resource.public_id}
-        width={400}
-        height={400}
-        className="rounded-lg shadow-lg hover:-translate-y-2 transition-transform"
-      />
+      <Suspense
+        fallback={
+          <div
+            style={{
+              width: 400,
+              height: 400,
+            }}
+            className="bg-gray-200 dark:bg-gray-800 rounded-lg"
+          ></div>
+        }
+      >
+        <Image
+          src={url}
+          alt={photo_resource.public_id}
+          width={400}
+          height={400}
+          className="rounded-lg shadow-lg hover:-translate-y-2 transition-transform"
+        />
+      </Suspense>
     </Link>
   );
 }
