@@ -43,7 +43,22 @@ const useMasonry = () => {
       });
     };
 
-    handleMasonry();
+    const waitForImages = async () => {
+      if (!masonryContainer.current) return;
+      const images = masonryContainer.current.querySelectorAll('img');
+      const promises = Array.from(images).map(
+        (img) =>
+          new Promise((resolve) => {
+            if (img.complete) resolve(true);
+            else img.addEventListener('load', () => resolve(true));
+          })
+      );
+      await Promise.all(promises);
+      handleMasonry();
+    };
+
+    waitForImages();
+
     window.addEventListener('resize', handleMasonry);
     return () => {
       window.removeEventListener('resize', handleMasonry);
