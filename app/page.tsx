@@ -4,7 +4,7 @@ import TechStack from 'app/components/techstack';
 
 export default function Page() {
   return (
-    <section className="px-4 py-8 md:px-8 lg:px-16">
+    <section className="lg:max-w-4xl md:max-w-3xl px-4 py-8 md:px-8 lg:px-16">
       <h1 className="mb-8 text-3xl font-semibold tracking-tighter">
         Hi, I'm Brendan Ng
       </h1>

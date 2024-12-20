@@ -1,15 +1,25 @@
+import { Masonry } from 'app/components/masonry';
+import Photo from 'app/components/photos';
+import getResults from 'app/gallery/utils/cachedImages';
+
 export const metadata = {
   title: 'Gallery',
   description: 'View my gallery.',
 };
 
-export default function Page() {
+export default async function Page() {
+  const results = await getResults();
+
   return (
-    <section className="px-4 py-8 md:px-8 lg:px-16">
-      <h1 className="mb-8 text-3xl font-semibold tracking-tighter">Gallery</h1>
-      <p className="mb-4">
-        {`I plan to showcase some of the pictures i took on this page. Look forward to it!`}
-      </p>
+    <section className="flex flex-col items-center justify-center">
+      <h1 className="lg:max-w-4xl md:max-w-3xl mb-8 text-3xl font-semibold tracking-tighter justify-center flex">
+        Gallery
+      </h1>
+      <Masonry>
+        {results.resources.map((photo) => (
+          <Photo key={photo.asset_id} photo_resource={photo} />
+        ))}
+      </Masonry>
     </section>
   );
 }
