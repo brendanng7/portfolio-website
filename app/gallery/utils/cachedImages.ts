@@ -14,6 +14,5 @@ export default async function getResults() {
     cachedResults = fetchedResults;
   }
 
-  console.log('cached results', cachedResults);
   return cachedResults;
 }

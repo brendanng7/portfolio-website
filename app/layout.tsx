@@ -1,6 +1,6 @@
 import './global.css';
 import type { Metadata } from 'next';
-import { DotGothic16, Pixelify_Sans, VT323 } from 'next/font/google';
+import { Inconsolata } from 'next/font/google';
 import { Navbar } from './components/nav';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
@@ -37,22 +37,9 @@ export const metadata: Metadata = {
 
 const cx = (...classes) => classes.filter(Boolean).join(' ');
 
-const dotGothic16 = DotGothic16({
-  subsets: ['latin'],
-  weight: ['400'],
-  style: ['normal'],
-});
-
-const pixelifySans = Pixelify_Sans({
-  subsets: ['latin'],
-  weight: ['400'],
-  style: ['normal'],
-});
-
-const vt323 = VT323({
-  subsets: ['latin'],
-  weight: ['400'],
-  style: ['normal'],
+const insonsolata = Inconsolata({
+  weight: '400',
+  style: 'normal',
 });
 
 export default function RootLayout({
@@ -67,7 +54,7 @@ export default function RootLayout({
         'text-black bg-white dark:text-white dark:bg-black',
         // GeistSans.variable,
         // GeistMono.variable
-        pixelifySans.className
+        insonsolata.className
       )}
     >
       <body className="antialiased mt-8">

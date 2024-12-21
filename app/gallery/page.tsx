@@ -12,8 +12,8 @@ export default async function Page() {
 
   return (
     <section className="flex flex-col items-center justify-center">
-      <h1 className="lg:max-w-4xl md:max-w-3xl mb-8 text-3xl font-semibold tracking-tighter justify-center flex">
-        Gallery
+      <h1 className="lg:max-w-4xl md:max-w-3xl mb-8 sm:text-3xl font-semibold tracking-tighter justify-center flex">
+        see the world through my lens
       </h1>
       <Masonry>
         {results.resources.map((photo) => (
