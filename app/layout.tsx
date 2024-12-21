@@ -40,6 +40,7 @@ const cx = (...classes) => classes.filter(Boolean).join(' ');
 const insonsolata = Inconsolata({
   weight: '400',
   style: 'normal',
+  subsets: ['latin'],
 });
 
 export default function RootLayout({

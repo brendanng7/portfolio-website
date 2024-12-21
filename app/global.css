@@ -5,6 +5,19 @@
   color: #fefefe;
 }
 
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-appear {
+  animation: appear 1s ease-in-out;
+}
+
 :root {
   --sh-class: #2d5e9d;
   --sh-identifier: #354150;
