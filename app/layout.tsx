@@ -1,4 +1,6 @@
-import './global.css';
+import './styles/global.css';
+import './styles/space.css';
+import './styles/snow.css';
 import type { Metadata } from 'next';
 import { Inconsolata } from 'next/font/google';
 import { Navbar } from './components/nav';
@@ -53,13 +55,17 @@ export default function RootLayout({
       lang="en"
       className={cx(
         'text-black bg-white dark:text-white dark:bg-black',
-        // GeistSans.variable,
-        // GeistMono.variable
         insonsolata.className
       )}
     >
       <body className="antialiased mt-8">
         <main className="flex-auto mt-6 flex flex-col px-2 items-center">
+          <div className="space -z-10" />
+          {/* <div className="snow-container -z-10">
+            {Array.from({ length: 100 }).map((_, i) => (
+              <div key={i} className="snow"></div>
+            ))}
+          </div> */}
           <Navbar />
           <div className="">
             {children}

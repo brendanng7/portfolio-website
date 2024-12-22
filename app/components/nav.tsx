@@ -37,8 +37,8 @@ export function Navbar() {
 
   return (
     <aside
-      className={`-ml-[8px] mb-16 tracking-tight z-50 lg:sticky lg:top-0 w-full bg-white dark:bg-black transition-shadow duration-300 ${
-        !top && 'shadow-lg'
+      className={`-ml-[8px] mb-16 tracking-tight z-50 lg:sticky lg:top-0 w-full transition-shadow duration-300 ${
+        !top && 'shadow-lg bg-white dark:bg-black'
       }`}
     >
       <div className="lg:w-4xl md:w-3xl mx-auto flex justify-between items-center py-4">

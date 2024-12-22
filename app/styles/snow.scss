@@ -1,0 +1,74 @@
+@use 'sass:math';
+
+:root {
+  --snow-color: grey;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --snow-color: white;
+  }
+}
+
+@function random_range($min, $max) {
+  $rand: math.random();
+  $random_range: $min + math.floor($rand * (($max - $min) + 1));
+  @return $random_range;
+}
+
+.snow {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: var(--snow-color);
+  border-radius: 50%;
+  pointer-events: none;
+
+  $total: 100;
+
+  @for $i from 1 through $total {
+    // Randomize horizontal position across the entire viewport width
+    $random-x: math.random() * 100vw;
+    // Allow small offsets for variation in the falling path
+    $random-offset: random_range(-50, 50) * 1vw;
+    // Define random end positions and offsets
+    $random-x-end: $random-x + $random-offset;
+    $random-x-end-yoyo: $random-x + math.div($random-offset, 2);
+    // Control how far snowflakes will "yoyo" during the fall
+    $random-yoyo-time: math.div(random_range(30000, 80000), 100000);
+    $random-yoyo-y: $random-yoyo-time * 100vh;
+    // Randomize scale for varied flake sizes
+    $random-scale: math.div(math.random(400), 1000) +
+      0.2; // Scale between 0.2 and 0.6
+    $fall-duration: random_range(10, 30) * 1s; // Fall time between 10s and 30s
+    $fall-delay: math.random(30) * -1s; // Randomize delay to stagger animations
+
+    &:nth-child(#{$i}) {
+      opacity: math.div(math.random(500), 1000) + 0.5;
+      transform: translate($random-x, -10px) scale($random-scale);
+      animation: fall-#{$i} $fall-duration $fall-delay linear infinite;
+    }
+
+    @keyframes fall-#{$i} {
+      // Midpoint of animation (yoyo effect)
+      #{math.percentage($random-yoyo-time)} {
+        transform: translate($random-x-end, $random-yoyo-y) scale($random-scale);
+      }
+      // End of animation (reaches bottom)
+      to {
+        transform: translate($random-x-end-yoyo, 100vh) scale($random-scale);
+      }
+    }
+  }
+}
+
+// Ensure the snow covers the entire scrollable area
+.snow-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden; // Prevent overflow of flakes
+  pointer-events: none; // Ensure user interactions are unaffected
+}
