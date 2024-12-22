@@ -26,8 +26,10 @@
     "react-dom": "18.2.0",
     "react-hooks-global-state": "^2.1.0",
     "react-tooltip": "^5.28.0",
+    "sass": "^1.83.0",
     "sugar-high": "^0.6.0",
-    "typescript": "5.3.3"
+    "typescript": "5.3.3",
+    "typewriter-effect": "^2.21.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.20",
