@@ -3,7 +3,7 @@
 import { Fade, Modal } from '@mui/material';
 import { ArrowIcon } from 'app/components/footer';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 function JouzuDescription() {
   const [open, setOpen] = useState(false);
@@ -212,19 +212,35 @@ function ContactMateDescription() {
  * @returns JSX.Element
  */
 export default function ExperienceList() {
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      setIsLoaded(true);
-    }, 400); // Allowing some delay for a smooth effect
-    return () => clearTimeout(timeout);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
   }, []);
 
   return (
     <div
+      ref={sectionRef}
       className={`transition-opacity duration-1000 ease-in ${
-        isLoaded ? 'opacity-100' : 'opacity-0'
+        isVisible ? 'opacity-100' : 'opacity-0'
       }`}
     >
       <h1 className="text-2xl font-bold tracking-tight mb-8 text-gray-800 dark:text-gray-200">

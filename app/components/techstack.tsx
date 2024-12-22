@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { Fragment, useEffect, useState } from 'react';
+import { Fragment, useEffect, useRef, useState } from 'react';
 import { Tooltip } from 'react-tooltip';
 
 const languages = {
@@ -105,24 +105,38 @@ const others = {
 };
 
 export default function TechStack() {
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      setIsLoaded(true);
-    }, 100); // Allowing some delay for a smooth effect
-    return () => clearTimeout(timeout);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.2 } // Trigger when 20% of the section is visible
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
   }, []);
 
   return (
     <div
+      ref={sectionRef}
       className={`transition-opacity duration-1000 ease-in ${
-        isLoaded ? 'opacity-100' : 'opacity-0'
+        isVisible ? 'opacity-100' : 'opacity-0'
       }`}
     >
-      <h1 className="text-2xl font-semibold tracking-tighter mb-1">
-        Languages
-      </h1>
+      <h1 className="text-2xl font-semibold tracking-tight mb-1">Languages</h1>
       <div className="flex flex-wrap gap-4 mb-2">
         {Object.entries(languages).map(
           ([language, { name, svg, classname }]) => (
@@ -142,9 +156,7 @@ export default function TechStack() {
           )
         )}
       </div>
-      <h1 className="text-2xl font-semibold tracking-tighter mb-1">
-        Frameworks
-      </h1>
+      <h1 className="text-2xl font-semibold tracking-tight mb-1">Frameworks</h1>
       <div className="flex flex-wrap gap-4 mb-2">
         {Object.entries(frameworks).map(
           ([framework, { name, svg, classname }]) => (
@@ -164,7 +176,7 @@ export default function TechStack() {
           )
         )}
       </div>
-      <h1 className="text-2xl font-semibold tracking-tighter mb-1">Others</h1>
+      <h1 className="text-2xl font-semibold tracking-tight mb-1">Others</h1>
       <div className="flex flex-wrap gap-4 mb-2">
         {Object.entries(others).map(([other, { name, svg, classname }]) => (
           <Fragment key={other}>
