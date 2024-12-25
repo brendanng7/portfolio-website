@@ -7,38 +7,38 @@ import { Tooltip } from 'react-tooltip';
 const languages = {
   html5: {
     name: 'HTML5',
-    svg: '/techstack/html-5.svg',
+    svg: '/portfolio-website/techstack/html-5.svg',
     classname: '',
   },
   css3: {
     name: 'CSS3',
-    svg: '/techstack/css-3.svg',
+    svg: '/portfolio-website/techstack/css-3.svg',
     classname: '',
   },
   javascript: {
     name: 'JavaScript',
-    svg: '/techstack/javascript.svg',
+    svg: '/portfolio-website/techstack/javascript.svg',
     classname: '',
   },
   typescript: {
     name: 'TypeScript',
-    svg: '/techstack/typescript.svg',
+    svg: '/portfolio-website/techstack/typescript.svg',
     classname: '',
   },
   java: {
     name: 'Java',
-    svg: '/techstack/java.svg',
+    svg: '/portfolio-website/techstack/java.svg',
     classname: '',
   },
   python: {
     name: 'Python',
-    svg: '/techstack/python.svg',
+    svg: '/portfolio-website/techstack/python.svg',
     classname: '',
   },
-  c: { name: 'C', svg: '/techstack/c.svg', classname: '' },
+  c: { name: 'C', svg: '/portfolio-website/techstack/c.svg', classname: '' },
   ruby: {
     name: 'Ruby',
-    svg: '/techstack/ruby.svg',
+    svg: '/portfolio-website/techstack/ruby.svg',
     classname: '',
   },
 };
@@ -46,32 +46,32 @@ const languages = {
 const frameworks = {
   react: {
     name: 'React',
-    svg: '/techstack/react.svg',
+    svg: '/portfolio-website/techstack/react.svg',
     classname: '',
   },
   nextjs: {
     name: 'Next.js',
-    svg: '/techstack/nextjs.svg',
+    svg: '/portfolio-website/techstack/nextjs.svg',
     classname: 'dark:invert',
   },
   expo: {
     name: 'Expo',
-    svg: '/techstack/expo.svg',
+    svg: '/portfolio-website/techstack/expo.svg',
     classname: 'dark:invert',
   },
   django: {
     name: 'Django',
-    svg: '/techstack/django.svg',
+    svg: '/portfolio-website/techstack/django.svg',
     classname: 'dark:invert',
   },
   jest: {
     name: 'Jest',
-    svg: '/techstack/jest.svg',
+    svg: '/portfolio-website/techstack/jest.svg',
     classname: '',
   },
   postgresql: {
     name: 'PostgreSQL',
-    svg: '/techstack/postgresql.svg',
+    svg: '/portfolio-website/techstack/postgresql.svg',
     classname: '',
   },
 };
@@ -79,27 +79,27 @@ const frameworks = {
 const others = {
   git: {
     name: 'Git',
-    svg: '/techstack/git.svg',
+    svg: '/portfolio-website/techstack/git.svg',
     classname: '',
   },
   figma: {
     name: 'Figma',
-    svg: '/techstack/figma.svg',
+    svg: '/portfolio-website/techstack/figma.svg',
     classname: '',
   },
   tailwindcss: {
     name: 'Tailwind CSS',
-    svg: '/techstack/tailwindcss.svg',
+    svg: '/portfolio-website/techstack/tailwindcss.svg',
     classname: '',
   },
   postman: {
     name: 'Postman',
-    svg: '/techstack/postman.svg',
+    svg: '/portfolio-website/techstack/postman.svg',
     classname: '',
   },
   materialui: {
     name: 'Material UI',
-    svg: '/techstack/material-ui.svg',
+    svg: '/portfolio-website/techstack/material-ui.svg',
     classname: '',
   },
 };

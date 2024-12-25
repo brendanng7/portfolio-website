@@ -14,12 +14,12 @@ const socials = {
   github: {
     name: 'github',
     url: 'github.com/brendanng7',
-    svg: '/socials/github.svg',
+    svg: '/portfolio-website/socials/github.svg',
   },
   linkedin: {
     name: 'linkedin',
     url: 'linkedin.com/in/brendanng7',
-    svg: '/socials/linkedin.svg',
+    svg: '/portfolio-website/socials/linkedin.svg',
   },
 };
 
@@ -75,12 +75,12 @@ export function Navbar() {
             </a>
           ))}
           <a
-            href="/resume/resume.pdf"
+            href="/portfolio-website/resume/resume.pdf"
             target="_blank"
             className="transition-all group"
           >
             <Image
-              src="/resume/download-resume.svg"
+              src="/portfolio-website/resume/download-resume.svg"
               alt="resume"
               width={30}
               height={30}
