@@ -24,21 +24,25 @@ const socials = {
 };
 
 export function Navbar() {
-  const [top, setTop] = useState(true);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const scrollHandler = () => {
-      setTop(window.scrollY <= 30);
+    const onScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
     };
 
-    window.addEventListener('scroll', scrollHandler);
-    return () => window.removeEventListener('scroll', scrollHandler);
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   return (
     <aside
       className={`-ml-[8px] mb-16 tracking-tight z-50 lg:sticky lg:top-0 w-full transition-shadow duration-300 ${
-        !top && 'shadow-lg bg-white dark:bg-black'
+        scrolled && 'sm:shadow-lg bg-white dark:bg-black'
       }`}
     >
       <div className="lg:w-4xl md:w-3xl mx-auto flex justify-between items-center py-4">
